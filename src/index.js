@@ -19,6 +19,11 @@ app.use(require('./recover/routes'))
 app.use('/productos', require('./products/routes'))
 app.use('/pedidos', require('./orders/routes'))
 app.use('/usuarios', require('./users/routes'))
+app.use((req, res) =>
+{
+  res.status(404).send('No encontramos la pagina que buscabas')
+})
+
 
 app.listen(app.get('port'), () =>
 {
