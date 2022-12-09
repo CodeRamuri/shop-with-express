@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const path = require('path')
 
 // This is page list orders
 router.get('/', (req, res) =>
@@ -24,5 +25,8 @@ router.get('/eliminar', (req, res) =>
 {
   res.send('ELIMINAR PEDIDOS - Estas en la pagina de editar pedidos')
 })
+
+// Public
+router.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = router

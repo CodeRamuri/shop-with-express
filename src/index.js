@@ -24,7 +24,6 @@ app.use((req, res) =>
   res.status(404).send('No encontramos la pagina que buscabas')
 })
 
-
 app.listen(app.get('port'), () =>
 {
   console.log('Server on port', app.get('port'))
